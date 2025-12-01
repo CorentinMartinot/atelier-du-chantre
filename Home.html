@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=IM+Fell+English+SC&family=Inter:wght@300;400;500;600&family=Satisfy&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
     <style>
 
         /* Hero Section */
@@ -449,13 +449,13 @@
     </button>
 
     <script>
-    fetch('../partials/header.html')
+    fetch('header.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
         });
     
-    fetch('../partials/footer.html')
+    fetch('footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-container').innerHTML = data;
