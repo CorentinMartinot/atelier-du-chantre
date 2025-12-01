@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entretien et Restauration | L'Atelier du Chantre | Gironde</title>
+    <meta name="description" content="Entretien et restauration de violons, altos et violoncelles - Paul Chantre, Luthier">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bodoni+Moda:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <style>
+
+        /* MAIN CONTENT */
+        main {
+            max-width: 1400px;
+            margin: 80px auto;
+            padding: 40px 20px;
+        }
+
+        /* SECTION ENTRETIEN */
+        .maintenance-section {
+            margin-bottom: 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            align-items: center;
+            position: relative;
+        }
+
+        .maintenance-image {
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        .maintenance-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .maintenance-content {
+            padding: 40px 60px 40px 110px;
+            background: transparent;
+            border: 4px solid #FAF0E1;
+            position: relative;
+            margin-left: -80px;
+            z-index: 1;
+        }
+
+        .maintenance-content h1 {
+            margin-bottom: 20px;
+        }
+
+        .maintenance-content p {
+            font-size: 19px;
+            margin-bottom: 16px;
+            text-align: justify;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        .maintenance-content strong {
+            font-weight: 500;
+        }
+
+        /* SECTION RESTAURATION */
+        .restoration-section {
+            margin-bottom: 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            align-items: center;
+            position: relative;
+        }
+
+        .restoration-content {
+            padding: 40px 100px 40px 60px;
+            background: transparent;
+            border: 4px solid #FAF0E1;
+            position: relative;
+            margin-right: -70px;
+            z-index: 1;
+        }
+
+        .restoration-content h1 {
+            font-size: 60px;
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #292929c9;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+        }
+
+        .restoration-content p {
+            font-size: 19px;
+            margin-bottom: 16px;
+            text-align: justify;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        .restoration-content strong {
+            font-weight: 500;
+        }
+
+        .restoration-image {
+            width: 100%;
+            height: 526px;
+            overflow: hidden;
+        }
+
+        .restoration-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .btn-contact {
+            display: block;
+            width: fit-content;
+            margin: 25px auto 0;
+            padding: 12px 30px;
+            background: rgba(255, 97, 97, 0);
+            border: 1px solid #000;
+            color: #000;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 300;
+            transition: all 0.4s;
+        }
+
+        .btn-contact:hover {
+            background: #000;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .maintenance-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .maintenance-content {
+                margin-left: 0;
+                padding: 30px 20px;
+            }
+
+            .maintenance-content h2,
+            .restoration-content h2 {
+                font-size: 32px;
+            }
+
+            .restoration-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin-bottom: 60px;
+            }
+
+            .restoration-content {
+                margin-right: 0;
+                padding: 30px 20px;
+            }
+
+            .maintenance-content h2,
+            .restoration-content h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header-container"></header>
+
+    <main>
+        <section class="maintenance-section">
+            <div class="maintenance-image">
+                <img src="/public/images/stack-of-violins.avif" 
+                    alt="Série de violons accrochés">
+            </div>
+            <div class="maintenance-content">
+                <h1>Entretien</h1>
+                <p>Naturellement, votre instrument peut être endommagé au cours du temps : il est essentiel de <strong>l'entretenir pour conserver sa qualité sonore</strong>. Une révision annuelle vous permet d'éviter une intervention plus importante et plus coûteuse.</p>
+                <p>Je travaille sur <strong>devis</strong> puisque chaque instrument est unique et suppose un travail spécifique. N'hésitez pas à prendre contact avec moi pour me présenter vos instruments, c'est avec plaisir que je les examinerai pour vous proposer l'intervention la plus appropriée.</p>
+                <a href="Contact.html" class="btn-contact">Me contacter</a>
+            </div>
+        </section>
+
+        <section class="restoration-section">
+            <div class="restoration-content">
+                <h1>Restauration</h1>
+                <p>Les instruments du quatuor ont une durée de vie de plusieurs siècles mais, <strong>précieux et délicats</strong>, la qualité de leur entretien est essentielle pour préserver toutes leurs qualités. Restaurer un instrument marqué par les vicissitudes du temps est l'un de nos <strong>savoir-faire</strong>.</p>
+                <p>Je travaille avec des essences de bois soigneusement sélectionnées (épicéa de résonance, érable ondé…) qui garantissent pour vous <strong>qualité sonore et fiabilité de la restauration au cours du temps</strong>. Mes techniques et méthodes de travail sont celles de la grande tradition de la lutherie, seules à même de conserver toute <strong>l'authenticité</strong> et le <strong>caractère unique</strong> de votre instrument.</p>
+                <p>Après expertise de votre instrument, je vous propose un <strong>devis</strong> précis de mon intervention. N'hésitez pas à prendre contact avec moi, je me ferai un plaisir de vous proposer le meilleur service à des prix raisonnables.</p>
+                <a href="Contact.html" class="btn-contact">Me contacter</a>
+            </div>
+            <div class="restoration-image">
+                <img src="/public/images/paul-grabing-violin.avif" 
+                     alt="Luthier réparant un violon">
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer-container"></footer>
+    
+    <script>
+        fetch('../partials/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            });
+        
+        fetch('../partials/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

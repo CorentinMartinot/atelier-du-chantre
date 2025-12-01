@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Atelier du Chantre - Paul Chantre - Luthier | France</title>
+    <meta name="description" content="Fabrication, réparation et restauration de violons, altos et violoncelles">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=IM+Fell+English+SC&family=Inter:wght@300;400;500;600&family=Satisfy&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../style.css">
+    <style>
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 628px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 71px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 872px;
+            width: 90%;
+        }
+
+        .scroll-btn {
+            position: absolute;
+            bottom: 41px;
+            left: 50%;
+            transform: translateX(-50%) rotate(90deg);
+            background: rgba(226, 239, 134, 0);
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .scroll-btn:hover {
+            padding-left: 6px;
+        }
+
+        .scroll-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: #FAF0E1;
+        }
+
+        /* Présentation Section */
+        .presentation {
+            padding: 60px 20px;
+            position: relative;
+            scroll-margin-top: 100px;
+        }
+
+        .presentation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1562px;
+            height: 100%;
+            background: #fff;
+            z-index: -1;
+        }
+
+        .presentation-container {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .presentation-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+        }
+
+        .profile-photo {
+            width: 259px;
+            height: 258px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .bio {
+            flex: 1;
+        }
+
+        .bio h2 {
+            font-size: 26px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .bio p {
+            font-size: 19px;
+            text-align: center;
+            margin-bottom: 16px;
+            font-weight: 300;
+        }
+
+        .bio strong {
+            font-weight: 500;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #FAF0E1;
+            padding: 80px 40px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            text-align: center;
+        }
+
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .quote-icon {
+            font-family: 'IM Fell English SC', serif;
+            font-size: 40px;
+            color: #C4A78A;
+            margin-bottom: 20px;
+        }
+
+        .testimonial h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #3A4C4F;
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            font-size: 18px;
+            font-style: italic;
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+        }
+
+        .services h1 {
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 60px;
+        }
+
+        .services h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 3px;
+            background: #FAF0E1;
+        }
+
+        .services-container {
+            max-width: 980px;
+            margin: 0 auto;
+            display: flex;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .service-title {
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #F5F5F5;
+            border: 4px solid #FAF0E1;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card:hover .btn {
+            background: #000;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 313px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-content {
+            background: #FFFFFE;
+            padding: 40px 20px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .service-content h3 {
+            font-size: 30px;
+            letter-spacing: 0.05em;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(255, 97, 97, 0);
+            border: 1px solid #000;
+            color: #000;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 300;
+            transition: all 0.4s;
+        }
+
+        .btn:hover {
+            background: #000;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        /* Instagram Section */
+        .instagram {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .instagram h2 {
+            font-family: 'Satisfy', cursive;
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .instagram h3 {
+            font-size: 26px;
+            font-style: italic;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .instagram h3 a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        .instagram h3 a:hover {
+            color: #8F98E2;
+        }
+
+        .instagram-divider {
+            width: 115px;
+            height: 2px;
+            background: #999;
+            margin: 0 auto 50px;
+        }
+
+        /* Scroll to top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 49px;
+            height: 31px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .scroll-top:hover {
+            opacity: 1;
+        }
+
+        .scroll-top svg {
+            fill: #FAF0E1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .presentation-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header-container"></header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <img src="/public/images/hand-playing-violin.avif" alt="Hand playing violin" class="hero-bg">
+        <img src="/public/images/logo-light.avif" alt="Logo" class="hero-overlay">
+        <button class="scroll-btn" onclick="document.querySelector('.presentation').scrollIntoView({behavior: 'smooth'})">
+            <svg viewBox="0 0 60 60">
+                <path d="M46.5 28.9L20.6 3c-.6-.6-1.6-.6-2.2 0l-4.8 4.8c-.6.6-.6 1.6 0 2.2l19.8 20-19.9 19.9c-.6.6-.6 1.6 0 2.2l4.8 4.8c.6.6 1.6.6 2.2 0l21-21 4.8-4.8c.8-.6.8-1.6.2-2.2z"></path>
+            </svg>
+        </button>
+    </section>
+
+    <!-- Présentation -->
+    <section class="presentation" id="presentation">
+        <div class="presentation-container">
+            <div class="presentation-content">
+                <img src="/public/images/paul-chantre.avif" alt="Paul Chantre" class="profile-photo">
+                <div class="bio">
+                    <h2>Paul Chantre</h2>
+                    <p>Passionné depuis toujours par la musique et le travail du bois, minutieux, je me suis naturellement tourné vers la lutherie.</p>
+                    <p>Après des études d'acoustique puis d'ébénisterie, je suis aujourd'hui luthier quatuor, diplômé de la <strong>Newark School of Violin Making</strong> (UK).</p>
+                    <p>C'est avec plaisir que je vous accueille dans mon atelier pour répondre à vos demandes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <h1>VOS AVIS</h1>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="quote-icon">"</div>
+                    <h3>Candice</h3>
+                    <p>"Paul est très patient, attentif et à l'écoute. Il a su m'accompagner concernant mon premier violon. J'ai pu tester plusieurs de ses créations et c'était un régal pour les yeux comme pour les oreilles. Je recommande !"</p>
+                </div>
+                <div class="testimonial">
+                    <div class="quote-icon">"</div>
+                    <h3>Isabelle</h3>
+                    <p>"Un bon travail (et sensible) sur mon violoncelle : j'ai retrouvé le son perdu qui caractérisait mon instrument...!"</p>
+                </div>
+                <div class="testimonial">
+                    <div class="quote-icon">"</div>
+                    <h3>Victor</h3>
+                    <p>"Le 3/4 qu'il a réparé pour moi sonne, selon beaucoup d'oreilles fines, bien mieux que l'original. Un travail de qualité puis un suivi personnalisé. Je recommande chaleureusement."</p>
+                </div>
+                <div class="testimonial">
+                    <div class="quote-icon">"</div>
+                    <h3>Tina</h3>
+                    <p>"Paul a restauré mon violoncelle il y a 2 ans. Il a été très prévenant en m'expliquant le détail des étapes de travail. Je recommande sans hésiter son travail sérieux et durable. Sa grande sympathie m'a donné confiance et je suis très contente du résultat !"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="fabrication">
+        <h1>Mes services</h1>
+
+        <div class="services-container">
+            <a href="Manufacturing.html" class="service-card">
+                <div class="service-image">
+                    <img src="/public/images/hand-carving-violin.avif" alt="Fabrication">
+                </div>
+                <div class="service-content">
+                    <h3>Fabrication</h3>
+                    <span class="btn">Voir plus</span>
+                </div>
+            </a>
+            <a href="Maintenance&Restoration.html" class="service-card" id="restauration">
+                <div class="service-image">
+                    <img src="/public/images/pauls_trunk_repairing-violin.avif" alt="Restauration">
+                </div>
+                <div class="service-content">
+                    <h3>Entretien et Restauration</h3>
+                    <span class="btn">Voir plus</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Instagram -->
+    <section class="instagram">
+        <h2>Et sur Instagram</h2>
+        <h3><a href="https://www.instagram.com/latelierduchantre/" target="_blank">@latelierduchantre</a></h3>
+        <div class="instagram-divider"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer-container"></footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg viewBox="20 50.001 159.999 99.999" height="200" width="200">
+            <path d="M26.097 143.956c8.129 8.058 21.432 8.058 29.561 0L100 100l44.342 43.957c8.129 8.058 21.432 8.058 29.561 0 8.129-8.058 8.129-21.246 0-29.304l-59.122-58.608c-8.129-8.058-21.432-8.058-29.561 0l-59.122 58.608c-8.13 8.058-8.13 21.244-.001 29.303z"></path>
+        </svg>
+    </button>
+
+    <script>
+    fetch('../partials/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+        });
+    
+    fetch('../partials/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+</body>
+</html>
