@@ -1,19 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
-    font-size: 19px;
-    line-height: 1.6;
-    color: #000;
-    background: #FBFBFB;
-}
-
 #app {
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     opacity: 1;
 }
 
@@ -30,6 +16,21 @@ header {
     top: 0;
     z-index: 100;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 19px;
+    line-height: 1.6;
+    color: #000;
+    background: #FBFBFB;
+}
+
 
 h1 {
     font-size: 60px;

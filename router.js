@@ -11,9 +11,9 @@ async function navigate(path) {
   const app = document.getElementById("app");
   
   // Only add fade effect if app already has content (not first load)
-  if (app.innerHTML) {
+  if (app.innerHTML && document.body.classList.contains('loaded')) {
     app.classList.add('fade-out-content');
-    await new Promise(resolve => setTimeout(resolve, 300));
+    await new Promise(resolve => setTimeout(resolve, 500));
   }
 
   history.pushState({}, "", path);
