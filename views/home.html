@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Atelier du Chantre - Paul Chantre - Luthier | France</title>
     <meta name="description" content="Fabrication, réparation et restauration de violons, altos et violoncelles">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=IM+Fell+English+SC&family=Inter:wght@300;400;500;600&family=Satisfy&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+
     <style>
 
         /* Hero Section */
@@ -215,7 +210,7 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .service-card:hover .btn {
+        .service-card:hover .ni-btn {
             background: #000;
             color: #fff;
             border-color: #fff;
@@ -249,24 +244,6 @@
             font-size: 30px;
             letter-spacing: 0.05em;
             font-weight: 300;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: rgba(255, 97, 97, 0);
-            border: 1px solid #000;
-            color: #000;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 300;
-            transition: all 0.4s;
-        }
-
-        .btn:hover {
-            background: #000;
-            color: #fff;
-            border-color: #fff;
         }
 
         /* Instagram Section */
@@ -347,8 +324,6 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header id="header-container"></header>
 
     <!-- Hero Section -->
     <section class="hero" id="accueil">
@@ -410,27 +385,27 @@
         <h1>Mes services</h1>
 
         <div class="services-container">
-            <a href="Manufacturing.html" class="service-card">
+            <a href="/manufacturing" data-link class="service-card">
                 <div class="service-image">
                     <img src="/public/images/hand-carving-violin.avif" alt="Fabrication">
                 </div>
                 <div class="service-content">
                     <h3>Fabrication</h3>
-                    <span class="btn">Voir plus</span>
+                    <span class="ni-btn">Voir plus</span>
                 </div>
             </a>
-            <a href="Maintenance&Restoration.html" class="service-card" id="restauration">
+            <a href="/maintenance-restoration" data-link class="service-card">
                 <div class="service-image">
                     <img src="/public/images/pauls_trunk_repairing-violin.avif" alt="Restauration">
                 </div>
                 <div class="service-content">
                     <h3>Entretien et Restauration</h3>
-                    <span class="btn">Voir plus</span>
+                    <span class="ni-btn">Voir plus</span>
                 </div>
             </a>
         </div>
     </section>
-
+    
     <!-- Instagram -->
     <section class="instagram">
         <h2>Et sur Instagram</h2>
@@ -438,28 +413,11 @@
         <div class="instagram-divider"></div>
     </section>
 
-    <!-- Footer -->
-    <footer id="footer-container"></footer>
-
     <!-- Scroll to top button -->
     <button class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
         <svg viewBox="20 50.001 159.999 99.999" height="200" width="200">
             <path d="M26.097 143.956c8.129 8.058 21.432 8.058 29.561 0L100 100l44.342 43.957c8.129 8.058 21.432 8.058 29.561 0 8.129-8.058 8.129-21.246 0-29.304l-59.122-58.608c-8.129-8.058-21.432-8.058-29.561 0l-59.122 58.608c-8.13 8.058-8.13 21.244-.001 29.303z"></path>
         </svg>
     </button>
-
-    <script>
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-container').innerHTML = data;
-        });
-    
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-container').innerHTML = data;
-        });
-    </script>
 </body>
 </html>

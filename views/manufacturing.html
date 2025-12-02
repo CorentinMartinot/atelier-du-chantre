@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabrication | L'Atelier du Chantre | Gironde</title>
     <meta name="description" content="Fabrication d'instruments à cordes - violons, altos et violoncelles - Paul Chantre, Luthier">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bodoni+Moda:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+    
     <style>
         /* MAIN CONTENT */
         main {
@@ -60,25 +55,6 @@
             line-height: 1.4;
         }
 
-        .btn-contact {
-            display: block;
-            width: fit-content;
-            margin: 25px auto 0;
-            padding: 12px 30px;
-            background: rgba(255, 97, 97, 0);
-            border: 1px solid #000;
-            color: #000;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 300;
-            transition: all 0.4s;
-        }
-
-        .btn-contact:hover {
-            background: #000;
-            color: #fff;
-            border-color: #fff;
-        }
 
         .photos-title {
             text-align: center;
@@ -257,8 +233,6 @@
     </style>
 </head>
 <body>
-    <header id="header-container"></header>
-
     <main>
         <div class="manufacturing-section">
             <div class="manufacturing-image">
@@ -269,7 +243,7 @@
                 <h1>Fabrication</h1>
                 <p>Mes instruments (violons, altos, violoncelles) sont fabriqués à la main dans la plus pure tradition des grands luthiers crémonais du XVIIème et XVIIIème siècle.</p>
                 <p>Ils sont créés à partir d'essences de bois rigoureusement sélectionnées pour leurs qualités acoustiques et esthétiques.</p>
-                <a href="Contact.html" class="btn-contact">Me contacter</a>
+                <a href="/contact" data-link class="ni-btn">Me contacter</a>
             </div>
         </div>
 
@@ -304,7 +278,7 @@
         </div>
 
         <div class="gallery-contact">
-            <a href="Contact.html" class="btn-contact">Me contacter</a>
+            <a href="/contact" data-link class="ni-btn">Me contacter</a>
         </div>
 
     <!-- Lightbox -->
@@ -316,22 +290,8 @@
         </div>
         <button class="lightbox-next" onclick="changeImage(1, event)">&#10095;</button>
     </div>
-
-    <footer id="footer-container"></footer>
     
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-            });
-        
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            });
-
+    <script init-lightbox>
         const images = [
             '../public/images/Gallery-1.avif',
             '../public/images/Gallery-2.avif',

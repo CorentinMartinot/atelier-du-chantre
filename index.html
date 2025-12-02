@@ -2,13 +2,33 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=Home.html">
-    <title>L'Atelier du Chantre - Redirection...</title>
-    <script>
-        window.location.href = "Home.html";
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Atelier du Chantre - Paul Chantre - Luthier | Gironde</title>
+    <meta name="description" content="Fabrication d'instruments à cordes - violons, altos et violoncelles - Paul Chantre, Luthier">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=IM+Fell+English+SC&family=Inter:wght@300;400;500;600&family=Satisfy&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <p>Redirection vers la page d'accueil... <a href="Home.html">Cliquez ici si vous n'êtes pas redirigé automatiquement</a></p>
+  <div id="loader-container"></div>
+
+  <header id="header"></header>
+
+  <div id="app"></div>
+
+  <footer id="footer"></footer>
+
+  <script src="router.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
