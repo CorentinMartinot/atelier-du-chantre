@@ -5,12 +5,12 @@ const routes = {
   "/contact": "/views/contact.html",
 };
 
+let lightboxInitialized = false;
+
 async function navigate(path) {
   const view = routes[path] || routes["/"];
-
   const app = document.getElementById("app");
   
-  // Only add fade effect if app already has content (not first load)
   if (app.innerHTML && document.body.classList.contains('loaded')) {
     app.classList.add('fade-out-content');
     await new Promise(resolve => setTimeout(resolve, 500));
@@ -22,14 +22,16 @@ async function navigate(path) {
   app.innerHTML = html;
 
   window.scrollTo(0, 0);
-
   app.classList.remove('fade-out-content');
+
+  if (path === "/manufacturing" && !lightboxInitialized) {
+    initLightbox();
+    lightboxInitialized = true;
+  }
 }
 
 document.addEventListener("click", (e) => {
-  // Cherche le lien parent avec data-link (remonte dans le DOM)
   const link = e.target.closest("[data-link]");
-
   if (link) {
     e.preventDefault();
     navigate(link.getAttribute("href"));
@@ -39,3 +41,14 @@ document.addEventListener("click", (e) => {
 window.addEventListener("popstate", () => {
   navigate(location.pathname);
 });
+
+function initLightbox() {
+  const app = document.getElementById("app");
+  const script = app.querySelector("script[init-lightbox]");
+  
+  if (!script) return;
+
+  const newScript = document.createElement('script');
+  newScript.textContent = script.textContent;
+  script.parentNode.replaceChild(newScript, script);
+}
