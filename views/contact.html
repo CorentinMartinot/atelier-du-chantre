@@ -3,21 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Atelier du Chantre - Paul Chantre - Luthier | Gironde</title>
     <meta name="description" content="Contactez Paul Chantre, luthier en Gironde">
 
-        <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bodoni+Moda:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
     <style>
         /* MAIN CONTENT */
         main {
@@ -115,8 +102,6 @@
     </style>
 </head>
 <body>
-    <!-- HEADER -->
-    <header id="header-container"></header>
 
     <!-- MAIN CONTENT -->
     <main>
@@ -169,22 +154,6 @@
             </div>
         </div>
     </main>
-
-    <!-- FOOTER -->
-    <footer id="footer-container"></footer>
     
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-            });
-        
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            });
-    </script>
 </body>
 </html>

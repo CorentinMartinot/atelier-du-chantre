@@ -3,21 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Atelier du Chantre - Paul Chantre - Luthier | Gironde</title>
     <meta name="description" content="Entretien et restauration de violons, altos et violoncelles - Paul Chantre, Luthier">
     
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bodoni+Moda:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
     <style>
 
         /* MAIN CONTENT */
@@ -127,26 +114,6 @@
             object-fit: cover;
         }
 
-        .btn-contact {
-            display: block;
-            width: fit-content;
-            margin: 25px auto 0;
-            padding: 12px 30px;
-            background: rgba(255, 97, 97, 0);
-            border: 1px solid #000;
-            color: #000;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 300;
-            transition: all 0.4s;
-        }
-
-        .btn-contact:hover {
-            background: #000;
-            color: #fff;
-            border-color: #fff;
-        }
-
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .maintenance-section {
@@ -183,8 +150,6 @@
     </style>
 </head>
 <body>
-    <header id="header-container"></header>
-
     <main>
         <section class="maintenance-section">
             <div class="maintenance-image">
@@ -195,7 +160,7 @@
                 <h1>Entretien</h1>
                 <p>Naturellement, votre instrument peut être endommagé au cours du temps : il est essentiel de <strong>l'entretenir pour conserver sa qualité sonore</strong>. Une révision annuelle vous permet d'éviter une intervention plus importante et plus coûteuse.</p>
                 <p>Je travaille sur <strong>devis</strong> puisque chaque instrument est unique et suppose un travail spécifique. N'hésitez pas à prendre contact avec moi pour me présenter vos instruments, c'est avec plaisir que je les examinerai pour vous proposer l'intervention la plus appropriée.</p>
-                <a href="Contact.html" class="btn-contact">Me contacter</a>
+                <a href="/contact" data-link class="ni-btn">Me contacter</a>
             </div>
         </section>
 
@@ -205,7 +170,7 @@
                 <p>Les instruments du quatuor ont une durée de vie de plusieurs siècles mais, <strong>précieux et délicats</strong>, la qualité de leur entretien est essentielle pour préserver toutes leurs qualités. Restaurer un instrument marqué par les vicissitudes du temps est l'un de nos <strong>savoir-faire</strong>.</p>
                 <p>Je travaille avec des essences de bois soigneusement sélectionnées (épicéa de résonance, érable ondé…) qui garantissent pour vous <strong>qualité sonore et fiabilité de la restauration au cours du temps</strong>. Mes techniques et méthodes de travail sont celles de la grande tradition de la lutherie, seules à même de conserver toute <strong>l'authenticité</strong> et le <strong>caractère unique</strong> de votre instrument.</p>
                 <p>Après expertise de votre instrument, je vous propose un <strong>devis</strong> précis de mon intervention. N'hésitez pas à prendre contact avec moi, je me ferai un plaisir de vous proposer le meilleur service à des prix raisonnables.</p>
-                <a href="Contact.html" class="btn-contact">Me contacter</a>
+                <a href="/contact" data-link class="ni-btn">Me contacter</a>
             </div>
             <div class="restoration-image">
                 <img src="/public/images/paul-grabing-violin.avif" 
@@ -213,21 +178,6 @@
             </div>
         </section>
     </main>
-
-    <footer id="footer-container"></footer>
     
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-            });
-        
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            });
-    </script>
 </body>
 </html>
