@@ -10,11 +10,12 @@
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
+        min-height: 90px;
     }
 
     .header-logo {
-        width: 130px;
-        height: 92px;
+        width: 120px;
+        height: 85px;
         padding-top: 6px;
     }
 
@@ -30,10 +31,18 @@
         font-size: 20px;
         font-weight: 400;
         transition: color 0.3s;
+        cursor: pointer;
     }
 
     nav a:hover {
         color: #8F98E2;
+    }
+
+    nav a.active {
+        color: #C4A78A;
+        font-weight: 500;
+        cursor: pointer;
+        pointer-events: auto;
     }
 
     .mobile-menu-toggle {
@@ -42,8 +51,9 @@
         border: none;
         cursor: pointer;
         padding: 10px;
-        position: fixed;
-        top: 30px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
         right: 20px;
         z-index: 10000;
     }
@@ -122,10 +132,18 @@
         font-size: 28px;
         font-weight: 400;
         transition: color 0.3s;
+        cursor: pointer;
     }
 
     .mobile-menu a:hover {
         color: #8F98E2;
+    }
+
+    .mobile-menu a.active {
+        color: #C4A78A;
+        font-weight: 500;
+        cursor: pointer;
+        pointer-events: auto;
     }
 
     .close-menu {
@@ -155,8 +173,8 @@
     @media (max-width: 768px) {
         .header-content {
             justify-content: center;
-            padding: 15px 20px;
             position: relative;
+            min-height: 90px;
         }
 
         .header-content > li:not(:first-child) {
@@ -168,8 +186,9 @@
         }
 
         .header-logo {
-            width: 100px;
-            height: 70px;
+            width: 120px;
+            height: 85px;
+            padding-top: 6px;
         }
     }
 </style>
@@ -216,4 +235,38 @@
         
         document.body.style.overflow = isActive ? 'hidden' : 'auto';
     }
+
+    function updateActiveLinks() {
+        const currentPath = window.location.pathname;
+        const allLinks = document.querySelectorAll('nav a[data-link], .mobile-menu a[data-link]');
+        
+        allLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentPath) {
+                link.classList.add('active');
+                
+                if (link.closest('.mobile-menu')) {
+                    link.onclick = function(e) {
+                        e.preventDefault();
+                        toggleMobileMenu();
+                    };
+                }
+            } else {
+                link.classList.remove('active');
+                if (link.closest('.mobile-menu')) {
+                    link.onclick = function() {
+                        toggleMobileMenu();
+                    };
+                }
+            }
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updateActiveLinks);
+    } else {
+        updateActiveLinks();
+    }
+
+    window.updateActiveLinks = updateActiveLinks;
 </script>
