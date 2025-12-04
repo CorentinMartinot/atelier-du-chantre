@@ -24,6 +24,10 @@ async function navigate(path) {
   window.scrollTo(0, 0);
   app.classList.remove('fade-out-content');
 
+  if (typeof window.updateActiveLinks === 'function') {
+    window.updateActiveLinks();
+  }
+
   if (path === "/manufacturing" && !lightboxInitialized) {
     initLightbox();
     lightboxInitialized = true;

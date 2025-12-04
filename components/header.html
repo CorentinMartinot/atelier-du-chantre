@@ -10,11 +10,12 @@
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
+        min-height: 100px;
     }
 
     .header-logo {
-        width: 130px;
-        height: 92px;
+        width: 120px;
+        height: 85px;
         padding-top: 6px;
     }
 
@@ -30,22 +31,174 @@
         font-size: 20px;
         font-weight: 400;
         transition: color 0.3s;
+        cursor: pointer;
     }
 
     nav a:hover {
         color: #8F98E2;
     }
 
+    nav a.active {
+        color: #C4A78A;
+        font-weight: 500;
+        cursor: pointer;
+        pointer-events: auto;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 20px;
+        z-index: 10000;
+    }
+
+    .mobile-menu-toggle svg {
+        width: 30px;
+        height: 30px;
+        stroke: #000;
+    }
+
+    .menu-line-1,
+    .menu-line-2,
+    .menu-line-3 {
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        transform-origin: 50% 50%;
+    }
+
+    .mobile-menu-toggle.active .menu-line-1 {
+        transform: translateY(3.72px) translateX(-3.72px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.active .menu-line-2 {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.active .menu-line-3 {
+        transform: translateY(-3.72px) translateX(-3.72px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0);
+        z-index: 9999;
+        padding: 80px 20px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease-in-out, background 0.4s ease-in-out, transform 0.4s ease-in-out;
+        transform: translateY(-20px);
+    }
+
+    .mobile-menu.active {
+        opacity: 1;
+        pointer-events: auto;
+        background: rgba(255, 255, 255, 0.98);
+        transform: translateY(0);
+    }
+
+    .mobile-menu ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        transform: translateY(30px);
+        opacity: 0;
+        transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    }
+
+    .mobile-menu.active ul {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: 0.2s;
+    }
+
+    .mobile-menu a {
+        text-decoration: none;
+        color: #000;
+        font-size: 24px;
+        font-weight: 400;
+        transition: color 0.3s;
+        cursor: pointer;
+    }
+
+    .mobile-menu a:hover {
+        color: #8F98E2;
+    }
+
+    .mobile-menu a.active {
+        color: #C4A78A;
+        font-weight: 500;
+        cursor: pointer;
+        pointer-events: auto;
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotate(-90deg);
+        right: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        opacity: 0;
+        transition: opacity 0.4s ease-out 0.2s, transform 0.4s ease-out 0.2s;
+    }
+
+    .close-menu svg {
+        width: 35px;
+        height: 35px;
+        stroke: #000;
+    }
+
+    .mobile-menu.active .close-menu {
+        opacity: 1;
+        transform: translateY(-50%) rotate(0);
+    }
+
     @media (max-width: 768px) {
         .header-content {
-            flex-direction: column;
-            gap: 20px;
+            justify-content: center;
+            position: relative;
+            min-height: 100px;
         }
 
-        nav ul {
-            flex-direction: column;
-            gap: 15px;
-            text-align: center;
+        .header-content > li:not(:first-child) {
+            display: none;
+        }
+
+        .mobile-menu-toggle {
+            display: block;
+        }
+
+        .header-logo {
+            width: 120px;
+            height: 85px;
+            padding-top: 6px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .mobile-menu ul {
+            gap: 30px;
+        }
+
+        .mobile-menu a {
+            font-size: 24px;
         }
     }
 </style>
@@ -62,6 +215,68 @@
             <li><a href="/manufacturing" data-link>Fabrication</a></li>
             <li><a href="/maintenance-restoration" data-link>Entretien et Restauration</a></li>
             <li><a href="/contact" data-link>Contact</a></li>
+            <button class="mobile-menu-toggle" id="menuToggle" onclick="toggleMobileMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                    <path class="menu-line-1" stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5" />
+                    <path class="menu-line-2" stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5" />
+                    <path class="menu-line-3" stroke-linecap="round" stroke-linejoin="round" d="M3.75 17.25h16.5" />
+                </svg>
+            </button>
         </ul>
     </nav>
 </div>
+
+<div class="mobile-menu" id="mobileMenu">
+    <ul>
+        <li><a href="/" data-link onclick="toggleMobileMenu()">Accueil</a></li>
+        <li><a href="/manufacturing" data-link onclick="toggleMobileMenu()">Fabrication</a></li>
+        <li><a href="/maintenance-restoration" data-link onclick="toggleMobileMenu()">Entretien et Restauration</a></li>
+        <li><a href="/contact" data-link onclick="toggleMobileMenu()">Contact</a></li>
+    </ul>
+</div>
+
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const toggle = document.getElementById('menuToggle');
+        
+        const isActive = menu.classList.toggle('active');
+        toggle.classList.toggle('active');
+        
+        document.body.style.overflow = isActive ? 'hidden' : 'auto';
+    }
+
+    function updateActiveLinks() {
+        const currentPath = window.location.pathname;
+        const allLinks = document.querySelectorAll('nav a[data-link], .mobile-menu a[data-link]');
+        
+        allLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentPath) {
+                link.classList.add('active');
+                
+                if (link.closest('.mobile-menu')) {
+                    link.onclick = function(e) {
+                        e.preventDefault();
+                        toggleMobileMenu();
+                    };
+                }
+            } else {
+                link.classList.remove('active');
+                if (link.closest('.mobile-menu')) {
+                    link.onclick = function() {
+                        toggleMobileMenu();
+                    };
+                }
+            }
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', updateActiveLinks);
+    } else {
+        updateActiveLinks();
+    }
+
+    window.updateActiveLinks = updateActiveLinks;
+</script>

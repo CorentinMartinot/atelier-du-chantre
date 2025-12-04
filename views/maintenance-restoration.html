@@ -6,6 +6,13 @@
     <meta name="description" content="Entretien et restauration de violons, altos et violoncelles - Paul Chantre, Luthier">
     
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
 
         /* MAIN CONTENT */
         main {
@@ -26,6 +33,7 @@
 
         .maintenance-image {
             width: 100%;
+            max-width: 780px;
             height: 450px;
             overflow: hidden;
         }
@@ -81,13 +89,7 @@
         }
 
         .restoration-content h1 {
-            font-size: 60px;
-            font-family: 'Bodoni Moda', serif;
-            font-weight: 600;
-            text-align: center;
             margin-bottom: 20px;
-            color: #292929c9;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
         }
 
         .restoration-content p {
@@ -104,6 +106,7 @@
 
         .restoration-image {
             width: 100%;
+            max-width: 780px;
             height: 526px;
             overflow: hidden;
         }
@@ -115,36 +118,180 @@
         }
 
         /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .maintenance-section {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .maintenance-content {
-                margin-left: 0;
+        @media (max-width: 1400px) {
+            main {
+                margin: 60px auto;
                 padding: 30px 20px;
             }
 
-            .maintenance-content h2,
-            .restoration-content h2 {
-                font-size: 32px;
+            .maintenance-section {
+                grid-template-columns: 1fr;
+                gap: 0;
+                margin-bottom: 80px;
+            }
+
+            .maintenance-image {
+                max-width: 700px;
+                margin: 0 auto;
+                position: relative;
+                z-index: 0;
+            }
+
+            .maintenance-content {
+                max-width: 660px;
+                padding: 430px 40px 30px 40px;
+                margin: -430px auto 0;
+                background: transparent;
+                border: 4px solid #FAF0E1;
+                position: relative;
+                z-index: 1;
             }
 
             .restoration-section {
                 grid-template-columns: 1fr;
-                gap: 30px;
-                margin-bottom: 60px;
+                gap: 0;
+                margin-bottom: 80px;
+            }
+
+            .restoration-image {
+                max-width: 700px;
+                margin: 0 auto;
+                position: relative;
+                z-index: 0;
+                order: -1;
             }
 
             .restoration-content {
-                margin-right: 0;
-                padding: 30px 20px;
+                max-width: 660px;
+                padding: 500px 40px 30px 40px;
+                margin: -505px auto 0;
+                background: transparent;
+                border: 4px solid #FAF0E1;
+                position: relative;
+                z-index: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 40px auto;
+                padding: 20px 0;
             }
 
-            .maintenance-content h2,
-            .restoration-content h2 {
+            .maintenance-section {
+                margin-bottom: 60px;
+                padding: 0 15px;
+            }
+
+            .maintenance-image {
+                max-width: 100%;
+                height: 300px;
+                margin: 0 auto;
+                position: relative;
+                z-index: 0;
+            }
+
+            .maintenance-content {
+                max-width: 95%;
+                padding: 280px 25px 25px 25px;
+                margin: -284px auto 0;
+            }
+
+            .maintenance-content h1 {
                 font-size: 32px;
+                margin-bottom: 15px;
+            }
+
+            .maintenance-content p {
+                font-size: 16px;
+                margin-bottom: 14px;
+            }
+
+            .restoration-section {
+                margin-bottom: 60px;
+                padding: 0 15px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .restoration-image {
+                max-width: 100%;
+                height: 350px;
+                order: -1;
+            }
+
+            .restoration-content {
+                max-width: 95%;
+                padding: 330px 25px 25px 25px;
+                margin: -333px auto 0;
+            }
+
+            .restoration-content h1 {
+                font-size: 32px;
+                margin-bottom: 15px;
+            }
+
+            .restoration-content p {
+                font-size: 16px;
+                margin-bottom: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                margin: 30px auto;
+                padding: 15px 0;
+            }
+
+            .maintenance-section {
+                margin-bottom: 40px;
+                padding: 0 15px;
+            }
+
+            .maintenance-image {
+                height: 250px;
+            }
+
+            .maintenance-content {
+                max-width: 95%;
+                padding: 235px 20px 20px 20px;
+                margin: -240px auto 0;
+            }
+
+            .maintenance-content h1 {
+                font-size: 28px;
+            }
+
+            .maintenance-content p {
+                font-size: 15px;
+                margin-bottom: 12px;
+            }
+
+            .restoration-section {
+                margin-bottom: 40px;
+                padding: 0 15px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .restoration-image {
+                height: 280px;
+                order: -1;
+            }
+
+            .restoration-content {
+                max-width: 95%;
+                padding: 265px 20px 20px 20px;
+                margin: -270px auto 0;
+            }
+
+            .restoration-content h1 {
+                font-size: 28px;
+            }
+
+            .restoration-content p {
+                font-size: 15px;
+                margin-bottom: 12px;
             }
         }
     </style>

@@ -25,10 +25,22 @@ async function initApp() {
       document.body.classList.add('loaded');
     }, remainingTime);
 
+    initScripts();
+
   } catch (error) {
     console.error('Error loading app:', error);
     document.getElementById('loader-container').innerHTML = '<p>Erreur de chargement</p>';
   }
+}
+
+function initScripts() {
+  const scripts = document.querySelectorAll('script');
+  
+  scripts.forEach(script => {
+    const newScript = document.createElement('script');
+    newScript.textContent = script.textContent;
+    script.parentNode.replaceChild(newScript, script);
+  });
 }
 
 initApp();
