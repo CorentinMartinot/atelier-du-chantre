@@ -10,7 +10,7 @@
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
-        min-height: 90px;
+        min-height: 100px;
     }
 
     .header-logo {
@@ -129,7 +129,7 @@
     .mobile-menu a {
         text-decoration: none;
         color: #000;
-        font-size: 28px;
+        font-size: 24px;
         font-weight: 400;
         transition: color 0.3s;
         cursor: pointer;
@@ -174,7 +174,7 @@
         .header-content {
             justify-content: center;
             position: relative;
-            min-height: 90px;
+            min-height: 100px;
         }
 
         .header-content > li:not(:first-child) {
@@ -189,6 +189,16 @@
             width: 120px;
             height: 85px;
             padding-top: 6px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .mobile-menu ul {
+            gap: 30px;
+        }
+
+        .mobile-menu a {
+            font-size: 24px;
         }
     }
 </style>

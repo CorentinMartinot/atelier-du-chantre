@@ -6,6 +6,13 @@
     <meta name="description" content="Fabrication, réparation et restauration de violons, altos et violoncelles">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
 
         /* Hero Section */
         .hero {
@@ -230,14 +237,14 @@
 
         .service-content {
             background: #FFFFFE;
-            padding: 40px 20px;
+            padding: 30px 20px;
             text-align: center;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 10px;
         }
 
         .service-content h3 {
@@ -306,18 +313,286 @@
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .presentation-content {
-                flex-direction: column;
-                text-align: center;
+        @media (max-width: 1024px) {
+            .hero {
+                height: 500px;
+            }
+
+            .hero-overlay {
+                top: 50px;
+                max-width: 700px;
+            }
+
+            .scroll-btn {
+                bottom: 30px;
+            }
+
+            .profile-photo {
+                width: 220px;
+                height: 220px;
             }
 
             .testimonials-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .presentation {
+                padding: 50px 20px;
+            }
+
+            .testimonials {
+                padding: 70px 30px;
+            }
+
+            .services {
+                padding: 70px 20px;
+            }
+
+            .instagram {
+                padding: 50px 20px;
+            }
+
+            .service-content h3 {
+                font-size: 28px;
+            }
+
+            .instagram h2 {
+                font-size: 38px;
+            }
+
+            .instagram h3 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 350px;
+            }
+
+            .hero-overlay {
+                top: 30px;
+                max-width: 500px;
+            }
+
+            .scroll-btn {
+                bottom: 15px;
+            }
+
+            .presentation {
+                padding: 40px 20px;
+            }
+
+            .presentation-content {
+                gap: 20px;
+            }
+
+            .bio h2 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+
+            .bio p {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+
+            .testimonials {
+                padding: 50px 20px;
+            }
+
+            .testimonial h3 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .testimonial p {
+                font-size: 16px;
+            }
+
+            .quote-icon {
+                font-size: 35px;
+                margin-bottom: 15px;
+            }
+
+            .services {
+                padding: 50px 20px;
+            }
+
+            .services h1 {
+                margin-bottom: 40px;
             }
 
             .services-container {
                 flex-direction: column;
+                gap: 20px;
+            }
+            
+            .service-card {
+                position: relative;
+            }
+
+            .service-card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+
+            .service-card:hover .ni-btn {
+                background: rgba(255, 255, 255, 0.7);
+                color: #000;
+                border-color: #FAF0E1;
+            }
+
+
+            .service-image {
+                height: 300px;
+            }
+
+            .service-content {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.5) 100%);
+                padding: 20px;
+                justify-content: space-between;
+            }
+
+            .service-content h3 {
+                font-size: 26px;
+                color: #fff;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            }
+
+            .service-content .ni-btn {
+                background: rgba(255, 255, 255, 0.7);
+                color: #000;
+                font-size: 16px;
+                padding: 10px 24px;
+            }
+
+            .instagram {
+                padding: 40px 20px;
+            }
+
+            .instagram h2 {
+                font-size: 34px;
+            }
+
+            .instagram h3 {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+
+            .instagram-divider {
+                margin: 0 auto 30px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .testimonial:nth-child(n+3) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 280px;
+            }
+
+            .hero-overlay {
+                top: 20px;
+                max-width: 370px;
+            }
+
+            .scroll-btn {
+                bottom: 10px;
+            }
+
+            .scroll-btn svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .profile-photo {
+                width: 140px;
+                height: 140px;
+            }
+
+            .bio h2 {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+
+            .bio p {
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+
+            .testimonials {
+                padding: 40px 15px;
+            }
+
+            .testimonials-grid {
+                gap: 20px;
+            }
+
+            .testimonial:nth-child(n+3) {
+                display: none;
+            }
+
+            .testimonial h3 {
+                font-size: 17px;
+            }
+
+            .testimonial p {
+                font-size: 15px;
+            }
+
+            .quote-icon {
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+
+            .services {
+                padding: 40px 15px;
+            }
+
+            .services h1 {
+                margin-bottom: 30px;
+            }
+
+            .services-container {
+                gap: 15px;
+            }
+
+            .service-image {
+                height: 250px;
+            }
+
+            .service-content {
+                padding: 15px;
+            }
+
+            .service-content h3 {
+                font-size: 24px;
+            }
+
+            .instagram {
+                padding: 30px 15px;
+            }
+
+            .instagram h2 {
+                font-size: 30px;
+            }
+
+            .instagram h3 {
+                font-size: 20px;
             }
         }
     </style>
